@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Transactions · Pennywise</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <aside class="sidebar">
+      <a class="brand" href="index.html">Pennywise</a>
+      <nav aria-label="Main">
+        <ul>
+          <li><a href="index.html">Dashboard</a></li>
+          <li><a href="transactions.html" aria-current="page">Transactions</a></li>
+          <li><a href="budget.html">Budget</a></li>
+          <li><a href="categories.html">Categories</a></li>
+          <li><a href="savings.html">Savings Goals</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <div class="main">
+      <header class="page-header">
+        <h1>Transactions</h1>
+        <p>October 2026</p>
+      </header>
+      <main>
+        <div id="add">
+          <section class="panel">
+            <h2>Add transaction</h2>
+            <p class="muted">Record an expense or income. Required fields are marked by your browser.</p>
+            <form class="transaction-form" action="transactions.html" method="get">
+              <div class="form-grid">
+                <div class="field">
+                  <label for="name">Transaction name</label>
+                  <input id="name" name="name" type="text" placeholder="e.g. College canteen" required>
+                </div>
+                <div class="field">
+                  <label for="amount">Amount (₹)</label>
+                  <input id="amount" name="amount" type="number" placeholder="0" required min="1" step="1">
+                </div>
+                <div class="field">
+                  <label for="type">Type</label>
+                  <select id="type" name="type">
+                    <option>Expense</option>
+                    <option>Income</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="category">Category</label>
+                  <select id="category" name="category">
+                    <option>Food</option>
+                    <option>Transport</option>
+                    <option>Education</option>
+                    <option>Shopping</option>
+                    <option>Entertainment</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="date">Date</label>
+                  <input id="date" name="date" type="date" placeholder="" required>
+                </div>
+                <div class="field">
+                  <label for="payment">Payment method</label>
+                  <select id="payment" name="payment">
+                    <option>Cash</option>
+                    <option>UPI</option>
+                    <option>Debit Card</option>
+                    <option>Credit Card</option>
+                    <option>Bank Transfer</option>
+                  </select>
+                </div>
+                <div class="field wide">
+                  <label for="notes">Notes (optional)</label>
+                  <textarea id="notes" name="notes" placeholder="Anything worth remembering"></textarea>
+                </div>
+              </div>
+              <div class="actions">
+                <button class="btn" type="submit">Save Transaction</button>
+                <button class="btn secondary" type="reset">Cancel</button>
+              </div>
+            </form>
+          </section>
+        </div>
+        <section class="panel">
+          <h2>Transaction history</h2>
+          <form class="filters" action="transactions.html" method="get">
+            <label for="q" hidden>Search</label>
+            <input id="q" name="q" type="search" placeholder="Search by name">
+            <label for="fc" hidden>Category</label>
+            <select id="fc" name="fc">
+              <option>All categories</option>
+              <option>Food</option>
+              <option>Transport</option>
+              <option>Education</option>
+              <option>Shopping</option>
+              <option>Entertainment</option>
+              <option>Other</option>
+            </select>
+            <label for="ft" hidden>Type</label>
+            <select id="ft" name="ft">
+              <option>All types</option>
+              <option>Expense</option>
+              <option>Income</option>
+            </select>
+            <label for="fm" hidden>Month</label>
+            <select id="fm" name="fm">
+              <option>October 2026</option>
+              <option>September 2026</option>
+              <option>August 2026</option>
+              <option>July 2026</option>
+            </select>
+            <button class="btn" type="submit">Apply</button>
+          </form>
+          <dl class="summary">
+            <div>
+              <dt>Income</dt>
+              <dd>₹14,000</dd>
+            </div>
+            <div>
+              <dt>Expenses</dt>
+              <dd>₹7,450</dd>
+            </div>
+            <div>
+              <dt>Net balance</dt>
+              <dd>₹6,550</dd>
+            </div>
+          </dl>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Transaction</th>
+                  <th>Category</th>
+                  <th>Payment</th>
+                  <th class="amount">Amount</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>27 Oct</td>
+                  <td>College canteen</td>
+                  <td><span class="badge">Food</span></td>
+                  <td>UPI</td>
+                  <td class="amount">−₹80</td>
+                </tr>
+                <tr>
+                  <td>26 Oct</td>
+                  <td>Freelance income</td>
+                  <td><span class="badge">Income</span></td>
+                  <td>Bank transfer</td>
+                  <td class="amount income">+₹2,000</td>
+                </tr>
+                <tr>
+                  <td>25 Oct</td>
+                  <td>Printing and stationery</td>
+                  <td><span class="badge">Education</span></td>
+                  <td>Cash</td>
+                  <td class="amount">−₹145</td>
+                </tr>
+                <tr>
+                  <td>24 Oct</td>
+                  <td>Coffee with friends</td>
+                  <td><span class="badge">Food</span></td>
+                  <td>UPI</td>
+                  <td class="amount">−₹260</td>
+                </tr>
+                <tr>
+                  <td>22 Oct</td>
+                  <td>Movie tickets</td>
+                  <td><span class="badge">Entertainment</span></td>
+                  <td>UPI</td>
+                  <td class="amount">−₹450</td>
+                </tr>
+                <tr>
+                  <td>20 Oct</td>
+                  <td>Mobile recharge</td>
+                  <td><span class="badge">Other</span></td>
+                  <td>UPI</td>
+                  <td class="amount">−₹299</td>
+                </tr>
+                <tr>
+                  <td>18 Oct</td>
+                  <td>Grocery shopping</td>
+                  <td><span class="badge">Food</span></td>
+                  <td>Debit Card</td>
+                  <td class="amount">−₹720</td>
+                </tr>
+                <tr>
+                  <td>12 Oct</td>
+                  <td>Bus pass</td>
+                  <td><span class="badge">Transport</span></td>
+                  <td>Cash</td>
+                  <td class="amount">−₹600</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+      <footer>
+        <p><strong>Pennywise</strong> · Spend mindfully. Save confidently.</p>
+        <nav aria-label="Footer">
+          <a href="index.html">Dashboard</a>
+          <a href="transactions.html">Transactions</a>
+          <a href="budget.html">Budget</a>
+          <a href="categories.html">Categories</a>
+          <a href="savings.html">Savings Goals</a>
+        </nav>
+      </footer>
+    </div>
+  </body>
+</html>

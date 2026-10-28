@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Categories · Pennywise</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <aside class="sidebar">
+      <a class="brand" href="index.html">Pennywise</a>
+      <nav aria-label="Main">
+        <ul>
+          <li><a href="index.html">Dashboard</a></li>
+          <li><a href="transactions.html">Transactions</a></li>
+          <li><a href="budget.html">Budget</a></li>
+          <li><a href="categories.html" aria-current="page">Categories</a></li>
+          <li><a href="savings.html">Savings Goals</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <div class="main">
+      <header class="page-header">
+        <h1>Categories</h1>
+        <p>October 2026</p>
+      </header>
+      <main>
+        <section class="panel">
+          <h2>Filter spending</h2>
+          <p class="muted">Categories show which habits cost the most, so you can adjust one at a time.</p>
+          <form action="categories.html" method="get">
+            <div class="form-grid">
+              <div class="field">
+                <label for="ccat">Category</label>
+                <select id="ccat" name="ccat">
+                  <option>All categories</option>
+                  <option>Food</option>
+                  <option>Transport</option>
+                  <option>Education</option>
+                  <option>Shopping</option>
+                  <option>Entertainment</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="cmonth">Month</label>
+                <select id="cmonth" name="cmonth">
+                  <option>October 2026</option>
+                  <option>September 2026</option>
+                  <option>August 2026</option>
+                  <option>July 2026</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="cview">Show</label>
+                <select id="cview" name="cview">
+                  <option>Expenses</option>
+                  <option>Income</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="from">From</label>
+                <input id="from" name="from" type="date" placeholder="" value="2026-10-01">
+              </div>
+              <div class="field">
+                <label for="to">To</label>
+                <input id="to" name="to" type="date" placeholder="" value="2026-10-31">
+              </div>
+            </div>
+            <button class="btn" type="submit">Apply</button>
+          </form>
+        </section>
+        <section class="panel">
+          <h2>Category breakdown</h2>
+          <ul class="category-list">
+            <li><p><strong> Food</strong><br><span class="muted">Canteen, groceries, coffee</span></p><div><p class="row"><span>₹2,450 of ₹3,000</span></p><progress class="warn" value="2450" max="3000" aria-label="Food"></progress></div></li>
+            <li><p><strong> Transport</strong><br><span class="muted">Bus pass, autos, trains</span></p><div><p class="row"><span>₹1,100 of ₹1,500</span></p><progress value="1100" max="1500" aria-label="Transport"></progress></div></li>
+            <li><p><strong> Education</strong><br><span class="muted">Textbooks, printing, fees</span></p><div><p class="row"><span>₹1,900 of ₹2,500</span></p><progress value="1900" max="2500" aria-label="Education"></progress></div></li>
+            <li><p><strong> Shopping</strong><br><span class="muted">Clothes, gadgets</span></p><div><p class="row"><span>₹900 of ₹1,500</span></p><progress value="900" max="1500" aria-label="Shopping"></progress></div></li>
+            <li><p><strong> Entertainment</strong><br><span class="muted">Movies, outings, games</span></p><div><p class="row"><span>₹600 of ₹1,000</span></p><progress value="600" max="1000" aria-label="Entertainment"></progress></div></li>
+            <li><p><strong> Other</strong><br><span class="muted">Recharge, subscriptions</span></p><div><p class="row"><span>₹500 of ₹2,500</span></p><progress value="500" max="2500" aria-label="Other"></progress></div></li>
+          </ul>
+        </section>
+      </main>
+      <footer>
+        <p><strong>Pennywise</strong> · Spend mindfully. Save confidently.</p>
+        <nav aria-label="Footer">
+          <a href="index.html">Dashboard</a>
+          <a href="transactions.html">Transactions</a>
+          <a href="budget.html">Budget</a>
+          <a href="categories.html">Categories</a>
+          <a href="savings.html">Savings Goals</a>
+        </nav>
+      </footer>
+    </div>
+  </body>
+</html>
